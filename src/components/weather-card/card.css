@@ -1,0 +1,146 @@
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  min-width: 300px;
+  border-radius: 12px;
+  background-image: linear-gradient(
+    -240deg,
+    rgba(26, 26, 26, 0.8),
+    rgba(52, 52, 52, 0.8)
+  );
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  color: #fff;
+  height: 116px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 40px;
+  transition: height 0.4s ease;
+}
+
+.card.active {
+  height: 260px;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.card-temperature {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.descriptin-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeIn 0.2s ease 0.4s;
+  animation-fill-mode: both;
+  user-select: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card-icon {
+  font-size: 72px;
+}
+
+.card-city {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.description-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-error {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  animation: showError 0.4s ease;
+  animation-fill-mode: both;
+  /* transition: transform .4s ease; */
+}
+
+.card-error p {
+  font-weight: 500;
+  font-size: 16px;
+  color: #f44336;
+  text-transform: uppercase;
+}
+
+@keyframes showError {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    padding: 20px;
+  }
+
+  .card-container,
+  .descriptin-block {
+    height: 100%;
+  }
+
+  .card {
+    height: 116px;
+  }
+  .card-error {
+    height: 40px;
+  }
+  .card-error p {
+    font-size: 14px;
+  }
+  .descriptin-block {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .description-wrapper {
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .card.active {
+    height: 360px;
+  }
+}
